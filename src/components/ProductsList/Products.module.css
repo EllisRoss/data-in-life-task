@@ -1,0 +1,9 @@
+.products {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #282c34;
+}
+
+.products__title {
+    text-align: center;
+}

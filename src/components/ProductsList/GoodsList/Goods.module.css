@@ -1,0 +1,25 @@
+.goods {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #61dafb;
+}
+
+.goods__id {
+    text-align: center;
+    font-size: 14pt;
+}
+
+.goods__name {
+    text-align: center;
+    font-size: 14pt;
+}
+
+.goods__price {
+    text-align: center;
+    font-size: 14pt;
+}
+
+.goods__summary {
+    text-align: center;
+    font-size: 14pt;
+}
