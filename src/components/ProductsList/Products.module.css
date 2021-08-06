@@ -1,5 +1,6 @@
 .products {
     width: 80%;
+    min-width: 750px;
     margin: 0 auto;
     background-color: #282c34;
 }

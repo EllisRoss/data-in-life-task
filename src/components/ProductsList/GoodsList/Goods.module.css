@@ -1,5 +1,6 @@
 .goods {
     width: 80%;
+    min-width: 750px;
     margin: 0 auto;
     background-color: #61dafb;
 }
@@ -7,19 +8,39 @@
 .goods__id {
     text-align: center;
     font-size: 14pt;
+    background-color: blanchedalmond;
+    max-width: 250px;
+    min-width: 150px;
 }
 
 .goods__name {
     text-align: center;
     font-size: 14pt;
+    background-color: azure;
+    max-width: 250px;
+    min-width: 150px;
 }
 
 .goods__price {
     text-align: center;
     font-size: 14pt;
+    background-color: blanchedalmond;
+    max-width: 250px;
+    min-width: 150px;
+}
+
+.goods__amount {
+    text-align: center;
+    font-size: 14pt;
+    background-color: azure;
+    max-width: 250px;
+    min-width: 150px;
 }
 
 .goods__summary {
     text-align: center;
     font-size: 14pt;
+    background-color: blanchedalmond;
+    max-width: 250px;
+    min-width: 150px;
 }
