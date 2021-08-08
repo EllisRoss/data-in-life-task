@@ -12,13 +12,13 @@ let initialState = {
 const productsReducer = (state = initialState, action: ActionTypes): InitialStateType => {
     switch (action.type) {
         case PRODUCTS_CHANGED:
-            return setProducts(state, action.products);
+            return _setProducts(state, action.products);
         default:
             return state;
     }
 }
 
-const setProducts = (state: InitialStateType, products: Product[]): InitialStateType => {
+const _setProducts = (state: InitialStateType, products: Product[]): InitialStateType => {
     return {
         ...state,
         products: [...products],
@@ -31,9 +31,8 @@ export const productsActions = {
 
 export const getProducts = (): ThunkType =>
     async (dispatch) => {
-
-        const payload: Product[] = await productsAPI.getProducts();
-        dispatch(productsActions.productsChanged(payload));
+        const products: Product[] = await productsAPI.getProducts();
+        dispatch(productsActions.productsChanged(products));
     }
 export default productsReducer;
 

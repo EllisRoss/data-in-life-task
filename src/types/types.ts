@@ -118,6 +118,12 @@ export type Product = {
     rposition: string       // example "10"
     rtitle: string          // example ""
     icon: string            // example "/images/pm/000001288.png"
-    description: string;    // example <p>Полиуретановые или резиновые...</p>
-    goods: Goods[];
+    description: string     // example <p>Полиуретановые или резиновые...</p>
+    goods: Goods[]
 };
+
+export type ProductInCart = {
+    id: string
+    amount: number
+    price: number;
+}

@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
-import {Goods} from "../../../types/types";
+import React, {useEffect, useState} from 'react';
+import {Goods} from "../../../../types/types";
 import {Col, Divider, InputNumber, Row} from "antd";
 import styles from './Goods.module.css'
+import {useDispatch} from "react-redux";
+import {productsInCartActions} from "../../../../redux/bottomBarReducer";
 
 export const GoodsList: React.FC<GoodsListProps> = React.memo( ({goods}) => {
     const goodsList = goods.map((g, index) => {
@@ -13,24 +15,24 @@ export const GoodsList: React.FC<GoodsListProps> = React.memo( ({goods}) => {
             <div>
                 <Row>
                     <Col flex={1}>
-                        <p className={styles.goods__id}>ID</p>
+                        <div className={styles.goods__id}><b>ID</b></div>
                     </Col>
                     <Col flex={1}>
-                        <p className={styles.goods__name}>Name</p>
+                        <div className={styles.goods__name}><b>Name</b></div>
                     </Col>
                     <Col flex={1}>
-                        <p className={styles.goods__price}>Price</p>
+                        <div className={styles.goods__price}><b>Price</b></div>
 
                     </Col>
                     <Col flex={1}>
-                        <p className={styles.goods__amount}>Amount</p>
+                        <div className={styles.goods__amount}><b>Amount</b></div>
                     </Col>
                     <Col flex={1}>
-                        <p className={styles.goods__summary}>Summary</p>
+                        <div className={styles.goods__summary}><b>Summary</b></div>
                     </Col>
                 </Row>
             </div>
-
+            <Divider/>
             {goodsList}
         </div>
     );
@@ -39,6 +41,18 @@ export const GoodsList: React.FC<GoodsListProps> = React.memo( ({goods}) => {
 const GoodsItem: React.FC<GoodsItemProps> = React.memo( ({goodsItem}) => {
 
     const [amount, setAmount] = useState(0)
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (amount === 0) {
+            dispatch(productsInCartActions.productDeleted(goodsItem.gid))
+        }
+        if (amount > 0) {
+            dispatch(productsInCartActions.productAdded(
+                {id: goodsItem.gid, amount, price: Number(goodsItem.gprice)})
+            )
+        }
+    }, [amount])
 
     return (
         <div>
@@ -61,7 +75,7 @@ const GoodsItem: React.FC<GoodsItemProps> = React.memo( ({goodsItem}) => {
                     <div className={styles.goods__summary}> {Number(goodsItem.gprice) * amount} &#8381;</div>
                 </Col>
             </Row>
-            <Divider></Divider>
+            <Divider />
         </div>
     );
 })

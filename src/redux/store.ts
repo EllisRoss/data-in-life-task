@@ -1,9 +1,11 @@
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import thunkMiddleware from "redux-thunk";
 import productsReducer from "./productsReducer";
+import bottomBarReducer from "./bottomBarReducer";
 
 let rootReducer = combineReducers({
     productsPage: productsReducer,
+    bottomBar: bottomBarReducer,
 });
 
 type RootReducerType = typeof rootReducer;

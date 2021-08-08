@@ -1,7 +1,7 @@
 import React from 'react';
-import {Product} from "../../types/types";
+import {Product} from "../../../types/types";
 import { GoodsList } from './GoodsList/GoodsList';
-import styles from './Products.module.css'
+import styles from '../Products.module.css'
 
 export const ProductsList: React.FC<ProductsListProps> = React.memo(({products}) => {
 
@@ -20,7 +20,7 @@ const ProductItem: React.FC<ProductItemProps> = React.memo( ({product}) => {
 
     return (
         <div>
-            <h1 className={styles.products__title}>{product.rname}</h1>
+            <h1 className={styles.products__title}>{product.rname ? product.rname : 'Empty title'}</h1>
             <GoodsList goods={product.goods}/>
         </div>
     );
