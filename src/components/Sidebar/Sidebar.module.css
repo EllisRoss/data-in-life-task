@@ -1,0 +1,11 @@
+.sidebar {
+    padding: 20px;
+    height: auto;
+    width: 300px;
+}
+
+.sidebar__title {
+    text-align: center;
+    font-size: 14pt;
+    color: black;
+}

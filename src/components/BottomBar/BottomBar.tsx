@@ -14,16 +14,20 @@ export const BottomBar = React.memo(() => {
     useEffect(() => {
         let summary = 0;
         let amount = 0;
+
         productsInCart.forEach(p => {
             summary = p.price * p.amount + summary;
             amount += p.amount;
-        })
+        }) // count current values
+
         setSummaryPrice(summary);
         setGoodsAmount(amount);
     }, [productsInCart]);
 
     const onClick = () => {
         const formData = new FormData();
+
+        // add fields of products to formData
         productsInCart.forEach(p => {
             const name = `product[${p.id}]`
             formData.append(name, String(p.amount));

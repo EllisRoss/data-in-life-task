@@ -1,18 +1,8 @@
 .products {
-    width: 80%;
+    width: 100%;
     min-width: 750px;
-    margin: 0 auto;
-    background-color: cornsilk;
 }
 
 .products__title {
     text-align: center;
-}
-
-.products__footer {
-    width: 80%;
-    min-width: 750px;
-    margin: 0 auto;
-    background-color: cornsilk;
-    height: 100px;
 }
