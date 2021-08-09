@@ -35,7 +35,7 @@ const App = () => {
                 <Sidebar/>
                 <Switch>
                     <Route exact path='/' render={() => <Products />}/>
-                    <Route path='/:id?' render={() => <ProductsFolder />}/>
+                    <Route path='/id' render={() => <ProductsFolder />}/>
                     <Route path='*' render={() => <div>404 NOT FOUND</div>}/>
                 </Switch>
 
