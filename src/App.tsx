@@ -30,7 +30,6 @@ const App = () => {
 
     return (
         <div>
-            <header/>
             <div className='content'>
                 <Sidebar/>
                 <Switch>
